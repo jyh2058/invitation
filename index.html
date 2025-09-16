@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>전영환♡아마노 메구미 모바일 청첩장</title>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const isMobile = /iPhone|iPad|Android|iPod|blackberry|opera mini|opera mobile/i.test(navigator.userAgent);
+      if (!isMobile) {
+        document.body.innerHTML = "<h2 style='text-align:center; margin-top:50px;'>모바일 기기에서 접속해 주세요 🙏</h2>";
+      }
+      document.body.style.visibility = 'visible';
+    });
+
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+
+  <meta property="og:title" content="전영환♡아마노 메구미" />
+  <meta property="og:description" content="결혼식에 초대합니다." />
+  <meta property="og:image" content="https://drive.google.com/thumbnail?id=1OfAzl9dITFI5xS334AEJWaIeHZ18uD3F&sz=w100" />
+  <meta property="og:url" content="https://jyh2058.github.io/meguyon/" />
+  <meta property="og:type" content="website" />
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+  <style>
+    @font-face {
+        font-family: 'MaruBuri';
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot);
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.ttf) format("truetype");
+    }
+    
+    body {
+      visibility: hidden;
+      font-family: 'MaruBuri', serif;
+      font-size: 1.1em;
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+      background-color: #FFF9F3;
+      color: black;
+      text-align: center;
+      padding: .25rem !important;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    .button-guide {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background: rgba(255, 240, 245, 0.9);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #d85c8a;
+      z-index: 1000;
+      opacity: 1;
+      transition: opacity 2s ease;
+      text-align: left;
+    }
+
+    .button-guide.fade-out {
+      opacity: 0;
+    }
+
+    .play-button {
+      position: fixed !important;
+      top: 15px;
+      right: 60px;
+      cursor: pointer;
+      color: lightpink;
+      z-index: 999;
+    }
+
+    .car-button {
+      position: fixed !important;
+      top: 60px;
+      right: 60px;
+      color: lightpink;
+      z-index: 999;
+    }
+
+    .map-button {
+      position: fixed !important;
+      top: 60px;
+      right: 15px;
+      color: lightpink;
+      z-index: 999;
+    }
+
+    .header-decoration-wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .decoration {
+      width: 235.25px;       /* 원하는 잘린 영역 크기 */
+      aspect-ratio: 1000 / 707;
+      background-image: url('sakura.png');
+      background-size: 375px 265.125px;
+      background-position: left top;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    .header-decoration {
+      background-position: left top;
+      height: 160px;
+    }
+
+    .footer-decoration-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .footer-decoration {
+      background-position: right bottom;     /* 오른쪽 아래 기준 */
+    }
+
+    .footer-message {
+      position: absolute;
+      width: 100%;
+      bottom: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: 'Noto Serif KR', serif;
+      z-index: 1;
+    }
+    
+    .center-top-text {
+      position: absolute;
+      top: 80%;                  /* 중앙보다 아래쪽으로 이동 */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      color: #333;
+    }
+
+    .crop-box {
+      width: 100%;
+      height: 390px; /* 보여줄 높이 */
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .crop-box img {
+      position: absolute;
+      top: -40px; /* 이미지의 시작 위치를 위로 올려서 중간부터 보여줌 */
+      left: 0px;
+      width: 100%;
+      height: auto;
+      transform: scale(0.70);
+      transform-origin: center;
+    }
+    
+    .header-image {
+      z-index: 1;
+      width: 75%;
+      max-width: 547.4px;
+      max-height: 100%;
+      display: block;
+      /* border-radius: 20px; */
+      aspect-ratio: 2 / 3;
+    }
+
+    .container-1 {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 { font-size: 2em; margin-bottom: 0.3em; }
+    h2 { font-size: 1.2em; }
+    p { font-size: 0.75em; line-height: 1.6; margin: 0.5em 0; }
+
+    .info {
+      margin-top: 2em;
+      font-size: 0.95em;
+    }
+
+    .gallery-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    
+    .scroll-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      padding: 20px 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      max-width: 90vw;
+    }
+
+    .main-display {
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+    
+    .main-display img {
+      width: 60%;
+      height: auto;
+      transition: opacity 0.3s ease;
+    }
+    
+    .thumbnail {
+      flex: 0 0 auto;
+      width: 33.33333333%;
+      aspect-ratio: 2 / 3;
+      background-size: cover;
+      background-position: top;
+      border-radius: 8px;
+      scroll-snap-align: center;
+      cursor: pointer;
+      pointer-events: auto;
+      user-select: none;
+      transition: filter 0.3s ease, transform 0.3s ease;
+      padding: .25rem !important;
+    }
+
+    .thumbnail-scroll {
+      display: flex;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* iOS에서 부드러운 스크롤 */
+      scroll-behavior: smooth;
+    }
+
+    .thumbnail-scroll.active {
+      cursor: grabbing;
+      cursor: -webkit-grabbing;
+    }
+    
+    .arrow {
+      background: none;
+      border: none;
+      font-size: 2em;
+      cursor: pointer;
+      user-select: none;
+      color: lightpink;
+    }
+    
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    
+    #overlayImage {
+      max-width: 75%;
+      max-height: 75%;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    #overlayImage.fade-in {
+      opacity: 1;
+    }
+
+    .slide-counter {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: beige;
+      font-size: 1.2rem;
+      background: rgba(0,0,0,0.5);
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-family: sans-serif;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 32px;
+      color: beige;
+      cursor: pointer;
+      z-index: 10000;
+      user-select: none;
+    }
+    
+    .sakura-container {
+      position: fixed;
+      top: -100px;
+      left: 0;
+      width: 100vw;
+      height: calc(100vh + 100px);
+      pointer-events: none;
+      z-index: 500;
+      overflow: hidden;
+    }
+    
+    @keyframes zigzagFall {
+      0%   { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+      25%  { transform: translate(-20px, 25vh) rotate(90deg); }
+      50%  { transform: translate(20px, 50vh) rotate(180deg); }
+      75%  { transform: translate(-15px, 75vh) rotate(270deg); }
+      100% { transform: translate(15px, 100vh) rotate(360deg); opacity: 0; }
+    }
+    
+    .sakura {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://drive.google.com/thumbnail?id=1llY2_njRUrvlfGzvrjBVPwlweffCJ7w6&sz=w1181');
+      background-size: cover;
+      animation: zigzagFall 8s linear infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    #sakuraToggleBtn {
+      position: fixed !important;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      color: lightpink;
+      z-index: 999;
+    }
+    
+    .top-bar {
+      display: flex;
+      justify-content: space-between; /* 좌우로 나눔 */
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .controls,
+    .language-switch {
+      display: flex;
+      gap: 8px;
+    }
+
+    button {
+      padding: 8px 12px;
+      font-size: 16px;
+      border: none;
+      background-color: #f0f0f0;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    
+    body.no-scroll {
+      overflow: hidden;
+      touch-action: none; /* 모바일 터치 스크롤도 차단 */
+    }
+
+    .invitation-box {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 547.4px;
+      background-image: url('./ballentain-dei-baegyeong.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;     /* 수직 가운데 */
+      justify-content: center; /* 수평 가운데 */
+      aspect-ratio: 2 / 3;
+    }
+    
+    .bg-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.6); /* 투명도 조절 */
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      width: 100%;
+    }
+    .language-switch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .divider {
+      width: 1px;
+      height: 20px;
+      background-color: #ccc;
+    }
+
+    img {
+      -webkit-user-select: none;
+      -webkit-touch-callout: none; /* iOS 길게 누르기 메뉴 방지 */
+      user-select: none;
+      pointer-events: none; /* 클릭 자체를 막을 수도 있음 */
+    }
+    
+    .top-button {
+      display: none; /* 처음엔 숨김 */
+      position: fixed !important;
+      bottom: 15px;
+      left: 15px;
+      color: lightpink;
+      z-index: 999;
+    }
+
+    .sakura-stack {
+      position: relative;
+      width: 2em;
+      height: 2em;
+    }
+    
+    .sakura-icon {
+      position: absolute;
+      top: 47%;
+      left: 50%;
+      width: 1.6em;
+      height: 1.6em;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    .toast.show {
+      animation: slideUp 0.5s ease-out;
+    }
+
+    .img-thumbnail {
+      pointer-events: auto;
+      width: 80px;
+      height: 120px;
+      cursor: pointer;
+    }
+
+    #carousel-thumbnails {
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    #carousel-thumbnails::-webkit-scrollbar {
+      display: none;
+    }
+    .thumb {
+      flex: 0 0 auto;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+    /* .thumb:hover {
+      transform: scale(1.00);
+    } */
+    .thumb.active {
+      border: 2px solid lightpink;
+      /* transform: scale(1.0); */
+    }
+
+    .carousel-item {
+      /* height: 426.625px; */
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-images {
+      width: 75%;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #fefefe;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease;
+    }
+    body.loaded #loader {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .fa-spinner {
+      font-size: 3rem;
+      color: lightpink;
+    }
+  </style>
+</head>
+<body>
+  <div id="loader">
+    <div style="text-align:center;">
+      <i class="fas fa-spinner fa-spin"></i>
+      <p style="margin-top:10px; font-size: 1em;">잠시만 기다려 주세요 🙏</p>
+    </div>
+  </div>
+
+  <div id="top" class="header-decoration-wrapper">
+    <div class="decoration header-decoration"></div>
+  </div>
+
+  <div class="mb-5 m-lg-5 d-flex justify-content-center">
+    <div>
+      <img src="https://drive.google.com/thumbnail?id=1QBnaINKAuF6Sb01bxpbqKpS9um-HZQY0&sz=w800" class="card-img-top" alt="..." style="width: 60%">
+      <div class="card-body p-1">
+        <p class="card-text text-center">2025년 11월 1일 토요일 오후 1시</p>
+        <p class="card-text text-center">김해중소기업비즈니스센터 5층 김해비즈컨벤션웨딩</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <div class="invitation-box m-1 mb-5">
+      <div class="bg-overlay"></div> <!-- 배경 투명도 조절용 -->
+  
+      <div class="content-wrapper px-4">
+        <!-- 초대장 내용 -->
+        <div class="container-1" id="ko">
+    
+          <div class="container text-center">
+            <div class="row" style="height: 150px;"> <!-- 높이 설정 -->
+              <div class="col-1 d-flex align-items-center justify-content-center"></div>
+              <div class="col-1 d-flex align-items-center justify-content-center">
+                신랑
+              </div>
+              <div class="col-3 d-flex align-items-center justify-content-center">
+                전영환
+              </div>
+              <div class="col-2 d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-heart fa-flip" style="color:pink; --fa-animation-duration: 3s;"></i>
+              </div>
+              <div class="col-1 d-flex align-items-center justify-content-center">
+                신부
+              </div>
+              <div class="col-3 d-flex align-items-center justify-content-center">
+                아마노<br>메구미
+              </div>
+              <div class="col-1 d-flex align-items-center justify-content-center"></div>
+            </div>
+          </div>
+          
+          <h2 class="mb-4">우리, 사랑으로 하나 됩니다</h2>
+      
+          <p>서로의 눈빛 속에서 함께 걸어갈 길을 찾았습니다.</p>
+          <p>소중한 분들과 그 첫걸음을 나누고 싶습니다.</p>
+          <p>오셔서 따뜻한 축복으로 함께해 주세요.</p>
+    
+          <div class="container text-center my-5" style="font-size: 0.8em;">
+            <div class="row">
+              <div class="col-3 col-lg-4 px-0 text-end">
+                <strong><i class="fa-solid fa-calendar-days"></i>일시:</strong>
+              </div>
+              <div class="col-9 col-lg-8 text-start">2025년 11월 1일 (토) 오후 1시</div>
+            </div>
+            <div class="row">
+              <div class="col-3 col-lg-4 px-0 text-end">
+                <strong><i class="fa-solid fa-location-dot"></i>장소:</strong>
+              </div>
+              <div class="col-9 col-lg-8 text-start">김해비즈컨벤션웨딩</div>
+            </div>
+            <div class="row">
+              <div class="col-3 col-lg-4 px-0 text-end">
+                <strong><i class="fa-solid fa-map"></i>주소:</strong>
+              </div>
+              <div class="col-9 col-lg-8 text-start">경상남도 김해시 주촌면 골든루트로 80-16<br>김해중소기업비즈니스센터 5층</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="text-center m-2 mb-3" style="color: #4B3F2F; font-size: 18px;"><i class="fa-solid fa-camera-retro"></i> Gallery</h2>
+  <div style="display: flex; align-items: center; justify-content: center;" class="mb-2">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-touch="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner" style="max-width: 547.4px;">
+        <div class="carousel-item active">
+          <img class="gallery-images" src="https://drive.google.com/thumbnail?id=1jEoQzjJugJ6Mym23K8TzImASwzbsVN2S&sz=w800" class="d-block mx-auto" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img class="gallery-images" src="https://drive.google.com/thumbnail?id=106uSjcCixsj0hgCF93Mnx6I6bIiRZzHa&sz=w800" class="d-block mx-auto" alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+          <img class="gallery-images" src="https://drive.google.com/thumbnail?id=1F_LM7n7QmTNV6zx4uRxdgULqhaDA2wIt&sz=w800" class="d-block mx-auto" alt="Slide 2">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <i class="fa-regular fa-circle-left arrow" aria-hidden="true"></i>
+        <span class="visually-hidden">이전</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <i class="fa-regular fa-circle-right arrow" aria-hidden="true"></i>
+        <span class="visually-hidden">다음</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="car_section" style="display: flex; align-items: center; justify-content: center;">
+    <div class="py-5" style="background-color: #FFFFFF; max-width: 547.4px;">
+      <h2 class="text-center m-2 mb-3" style="color: #4B3F2F; font-size: 18px;"><i class="fa-solid fa-car"></i> 오시는 길</h2>
+      <img src="biz_img02.jpg" class="w-100">
+      <img src="약도.png" class="w-100 border-top">
+      <div class="py-1 border-top">
+        <p>
+          <i class="fa-solid fa-phone"></i> 예식장 전화번호
+        </p>
+        <p>
+          055-325-1486
+        </p>
+        <p>
+          <a href="tel:055-325-1486" class="btn btn-warning btn-sm"><i class="fa-solid fa-phone"></i> 전화문의</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-5">
+    <h2 id="map_section" class="text-center mb-3" style="color: #4B3F2F; font-size: 18px;"><i class="fa-solid fa-map"></i> 지도</h2>
+    
+    <!-- 탭 메뉴 -->
+    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="kakaomap-tab" data-bs-toggle="tab" data-bs-target="#kakaomap"
+          type="button" role="tab" aria-controls="kakaomap" aria-selected="true">카카오지도</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="navermap-tab" data-bs-toggle="tab" data-bs-target="#navermap"
+          type="button" role="tab" aria-controls="navermap" aria-selected="true">네이버지도</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="googlemap-tab" data-bs-toggle="tab" data-bs-target="#googlemap"
+          type="button" role="tab" aria-controls="googlemap" aria-selected="false">구글지도</button>
+      </li>
+    </ul>
+    
+    <!-- 탭 콘텐츠 (367 x 332) -->
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="kakaomap" role="tabpanel" aria-labelledby="home-tab">
+        <div class="d-flex justify-content-center" style="height: 332px; overflow: hidden;">
+          <!-- * 카카오맵 - 지도퍼가기 -->
+          <!-- 1. 지도 노드 -->
+          <div id="daumRoughmapContainer1755525829784" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+          
+          <!--
+            2. 설치 스크립트
+            * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+          -->
+          <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+          
+          <!-- 3. 실행 스크립트 -->
+          <script charset="UTF-8">
+            new daum.roughmap.Lander({
+              "timestamp" : "1755525829784",
+              "key" : "7m54uct2eam",
+              "mapWidth" : "367",
+              "mapHeight" : "300"
+            }).render();
+          </script>
+        </div>
+      </div>
+      
+      <div class="tab-pane fade" id="navermap" role="tabpanel" aria-labelledby="navermap-tab">
+        <div class="d-flex justify-content-center" style="width: 100%; height: 332px;">
+          <a href="https://naver.me/FJbS2I30" target="_blank" rel="noopener noreferrer">네이버지도에서 예식장 위치열기(<i class="fa-solid fa-up-right-from-square"></i>)</a>
+        </div>
+      </div>
+      
+      <div class="tab-pane fade" id="googlemap" role="tabpanel" aria-labelledby="googlemap-tab" style="height: 332px; overflow: hidden;">
+        <div class="d-flex justify-content-center" style="height: 332px; overflow: hidden;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.72880364704!2d128.82899127632794!3d35.21322355554019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568c793822d237b%3A0x18d478ee06760b4f!2z6rmA7ZW07KSR7IaM6riw7JeF67mE7KaI64uI7Iqk7IS87YSw!5e0!3m2!1sja!2sjp!4v1755507307774!5m2!1sja!2sjp" width="367px" height="332px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-decoration-wrapper">
+    <div class="decoration footer-decoration"></div>
+  </div>
+
+  <a id="top-button" class="top-button" href="#top">
+    <span class="fa-stack fa-1x">
+      <i class="fa-regular fa-circle fa-stack-2x"></i>
+      <i class="fa-solid fa-eject fa-stack-1x"></i>
+    </span>
+  </a>
+
+  <!-- Toast 메시지 영역 -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-4">
+    <div id="copyToast" class="toast text-bg-secondary" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="2000">
+      <div class="d-flex">
+        <div class="toast-body w-100 text-center">
+          복사되었습니다.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/6fcecb4845.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('keydown', function(e) {
+      // F12, Ctrl+Shift+I, Ctrl+U 등 개발자도구 관련 키 차단
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+        (e.ctrlKey && e.key === 'U')
+      ) {
+        e.preventDefault();
+      }
+    });
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.addEventListener('contextmenu', e => e.preventDefault()); // 우클릭/길게 누르기 메뉴 차단
+    
+      document.querySelectorAll('img').forEach(img => {
+        let pressTimer;
+    
+        img.addEventListener('touchstart', () => {
+          pressTimer = Date.now();
+        });
+    
+        img.addEventListener('touchend', (e) => {
+          if (Date.now() - pressTimer > 500) {
+            e.preventDefault(); // 길게 누르기 방지
+          }
+        });
+      });
+    });
+    
+    let sakuraInterval = null;
+    let sakuraActive = false;
+    const maxSakuraCount = 20;
+    
+    function createSakura() {
+      const container = document.querySelector('.sakura-container');
+      if (container.childElementCount >= maxSakuraCount) return;
+      const sakura = document.createElement('div');
+      sakura.classList.add('sakura');
+      sakura.style.left = Math.random() * window.innerWidth + 'px';
+      sakura.style.animationDuration = (6 + Math.random() * 6) + 's';
+      sakura.style.animationDelay = (Math.random() * 5) + 's';
+      sakura.style.transform = `scale(${0.8 + Math.random() * 0.4}) rotate(${Math.random() * 360}deg)`;
+      sakura.style.opacity = 0.6 + Math.random() * 0.4;
+      container.appendChild(sakura);
+    }
+    
+    function toggleSakura() {
+      const btn = document.getElementById('sakuraToggleBtn');
+      const container = document.querySelector('.sakura-container');
+    
+      if (!sakuraActive) {
+        sakuraInterval = setInterval(createSakura, 300);
+        btn.innerHTML = '<i class="fa-regular fa-circle fa-stack-2x"></i><i class="fa-solid fa-pause fa-stack-1x"></i>'; // 재생 중이면 일시정지 아이콘
+        sakuraActive = true;
+      } else {
+        clearInterval(sakuraInterval);
+        sakuraActive = false;
+        btn.innerHTML = '<i class="fa-regular fa-circle fa-stack-2x"></i><img src="sakura-icon.png" class="sakura-icon" alt="Sakura Icon" />'; // 멈춰 있으면 재생 아이콘
+    
+        // 모든 벚꽃 즉시 제거
+        container.innerHTML = '';
+      }
+    }
+
+    // 언어 전환
+    function switchLanguage(lang) {
+      document.getElementById('ko').style.display = lang === 'ko' ? 'block' : 'none';
+      document.getElementById('ja').style.display = lang === 'ja' ? 'block' : 'none';
+    }
+
+    const audio = document.querySelector("audio");
+    const playBtn = document.querySelector(".play-button");
+    
+    // 버튼 클릭 시 재생/일시정지 토글
+    playBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playBtn.innerHTML = '<i class="fa-regular fa-circle fa-stack-2x"></i><i class="fa-solid fa-pause fa-stack-1x"></i>'; // 재생 중이면 일시정지 아이콘
+      } else {
+        audio.pause();
+        playBtn.innerHTML = '<i class="fa-regular fa-circle fa-stack-2x"></i><i class="fa-solid fa-music fa-stack-1x"></i>'; // 멈춰 있으면 재생 아이콘
+      }
+    });
+
+    function showImage(src) {
+      const mainImage = document.getElementById('mainImage');
+      mainImage.style.opacity = 0;
+      setTimeout(() => {
+        mainImage.src = src;
+        mainImage.style.opacity = 1;
+      }, 200);
+    }
+
+    let currentIndex = -1;
+    const imageList = [
+      'https://drive.google.com/thumbnail?id=106uSjcCixsj0hgCF93Mnx6I6bIiRZzHa&sz=w800',
+      'https://drive.google.com/thumbnail?id=1jEoQzjJugJ6Mym23K8TzImASwzbsVN2S&sz=w800',
+      'https://drive.google.com/thumbnail?id=1F_LM7n7QmTNV6zx4uRxdgULqhaDA2wIt&sz=w800'
+    ];
+    
+    function updateOverlay() {
+      const overlayImage = document.getElementById('overlayImage');
+    
+      // 페이드 아웃
+      overlayImage.classList.remove('fade-in');
+      void overlayImage.offsetWidth; // 리플로우 트릭으로 transition 재적용
+    
+      // 이미지 변경 후 페이드 인
+      overlayImage.src = imageList[currentIndex];
+      overlayImage.classList.add('fade-in');
+    
+      // 슬라이드 번호도 업데이트
+      document.getElementById('slideCounter').textContent = `${currentIndex + 1} / ${imageList.length}`;
+    }
+
+    function showOverlay(src) {
+      currentIndex = imageList.indexOf(src);
+      document.getElementById('overlay').style.display = 'flex';
+      updateOverlay();
+      document.body.classList.add('no-scroll');
+    }
+    
+    function hideOverlay() {
+      document.getElementById('overlay').style.display = 'none';
+      currentIndex = -1;
+      document.body.classList.remove('no-scroll');
+    }
+
+    //document.getElementById('closeOverlay').addEventListener('click', () => {
+    //  hideOverlay();
+    //});
+    
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
+      updateOverlay();
+    }
+    
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageList.length;
+      updateOverlay();
+    }
+    
+    // 키보드 대응
+    //document.addEventListener('keydown', (e) => {
+    //  const overlay = document.getElementById('overlay');
+    //  if (overlay.style.display !== 'flex') return;
+    
+    //  if (e.key === 'ArrowRight') showNextImage();
+    //  else if (e.key === 'ArrowLeft') showPrevImage();
+    //  else if (e.key === 'Escape') hideOverlay();
+    //});
+    
+    // 모바일 스와이프 대응
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    //document.getElementById('overlay').addEventListener('touchstart', (e) => {
+    //  touchStartX = e.changedTouches[0].screenX;
+    //});
+    
+    //document.getElementById('overlay').addEventListener('touchend', (e) => {
+    //  touchEndX = e.changedTouches[0].screenX;
+    //  handleSwipeGesture();
+    //});
+    
+    function handleSwipeGesture() {
+      const threshold = 50; // 최소 스와이프 거리
+      const distance = touchEndX - touchStartX;
+    
+      if (Math.abs(distance) < threshold) return;
+    
+      if (distance > 0) showPrevImage(); // 오른쪽으로 스와이프 → 이전
+      else showNextImage();              // 왼쪽으로 스와이프 → 다음
+    }
+
+    const bgm = document.getElementById('bgm');
+    const toggleBtn = document.getElementById('toggleMusicBtn');
+
+    function toggleMusic() {
+      if (bgm.paused) {
+        bgm.play();
+        toggleBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+      } else {
+        bgm.pause();
+        toggleBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+      }
+    }
+    
+    const overlay = document.getElementById('overlay');
+    
+    //overlay.addEventListener('click', function(e) {
+      // 클릭된 요소가 overlay 자체일 경우만 닫기
+    //  if (e.target === overlay) {
+    //    hideOverlay();
+    //  }
+    //});
+    
+    function hideOverlay() {
+      overlay.style.display = 'none';
+      document.body.classList.remove('no-scroll');
+    }
+    
+    document.querySelector(".copy-account").addEventListener("click", () => {
+      navigator.clipboard.writeText(this.dataset.account).then(() => {
+        const toastElement = document.getElementById('copyToast');
+        const toast = new bootstrap.Toast(toastElement);
+        toast.show();
+      });
+    });
+
+    // 캐러셀을 DOM 완전 로드 후에 초기화
+    document.addEventListener("DOMContentLoaded", function () {
+      const carouselElement = document.querySelector('#carouselExampleIndicators');
+      const carousel = new bootstrap.Carousel(carouselElement, {
+        touch: true,
+        interval: false
+      });
+    });
+
+    const carousel = document.querySelector('.carousel');
+    
+    carousel.addEventListener('touchstart', function (e) {
+      this.startY = e.touches[0].clientY;
+      this.startX = e.touches[0].clientX;
+    }, { passive: false });
+    
+    carousel.addEventListener('touchmove', function (e) {
+      const deltaY = e.touches[0].clientY - this.startY;
+      const deltaX = e.touches[0].clientX - this.startX;
+    
+      // 수평 스와이프 시 수직 스크롤 방지
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    window.onscroll = function() {
+      let btn = document.getElementById("top-button");
+      if (document.documentElement.scrollTop > 200) {
+        btn.style.display = "block"; // 스크롤 200px 넘으면 보임
+      } else {
+        btn.style.display = "none"; // 아니면 숨김
+      }
+    };
+
+    $(document).ready(function () {
+      $(".copy-account").on("click", function () {
+        const accountNumber = $(this).data("account");
+        navigator.clipboard.writeText(accountNumber).then(() => {
+          const toast = new bootstrap.Toast($("#copyToast")[0]);
+          toast.show();
+        });
+      });
+    });
+
+    const carouselleIndicators = document.querySelector('#carouselExampleIndicators');
+    const thumbnails = document.querySelectorAll('.thumb');
+    const thumbnailWrapper = document.querySelector('#carousel-thumbnails');
+
+    // 썸네일 클릭 시 Carousel 이동
+    thumbnails.forEach((thumb, index) => {
+      thumb.addEventListener('click', () => {
+        const bsCarousel = bootstrap.Carousel.getInstance(carouselleIndicators);
+        bsCarousel.to(index);
+      });
+    });
+
+    // Carousel 슬라이드 변경 시 썸네일 강조 + 스크롤 이동
+    carouselleIndicators.addEventListener('slid.bs.carousel', function (e) {
+      const activeIndex = e.to;
+
+      thumbnails.forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === activeIndex);
+      });
+
+      // 썸네일 자동 스크롤 (중앙으로)
+      const activeThumb = thumbnails[activeIndex];
+      const offsetLeft = activeThumb.offsetLeft - thumbnailWrapper.offsetWidth / 2 + activeThumb.offsetWidth / 2;
+      thumbnailWrapper.scrollTo({ left: offsetLeft, behavior: 'smooth' });
+    });
+
+    function updateCarouselHeight() {
+      const galleryImages = document.querySelectorAll('.gallery-images');
+      const carouselItems = document.querySelectorAll('.carousel-item');
+
+      let maxHeight = 0;
+
+      galleryImages.forEach(img => {
+        const renderedHeight = img.offsetHeight;
+        maxHeight = Math.max(maxHeight, renderedHeight);
+      });
+
+      carouselItems.forEach(item => {
+        item.style.height = maxHeight + 'px';
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const galleryImages = document.querySelectorAll('.gallery-images');
+
+      let loadedCount = 0;
+      galleryImages.forEach(img => {
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === galleryImages.length) {
+            updateCarouselHeight();
+          }
+        };
+
+        // 캐시된 이미지도 처리
+        if (img.complete) {
+          img.dispatchEvent(new Event('load'));
+        }
+      });
+
+      // 리사이즈 이벤트에 반응
+      //window.addEventListener('resize', updateCarouselHeight);
+    });
+  </script>
+</body>
+</html>
